@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# Online Tacker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application to track online users. The main features of the app is -
 
-## Available Scripts
+1. Login & Logout user.
+2. Persist an user's login data.
+3. Show currently active devices.
+4. Refresh devices status in every 5 seconds.
+5. Notify about the project.
 
-In the project directory, you can run:
+## 👨‍💻 Installation and Setup Instructions
 
-### `npm start`
+To run locally you will need to clone down this repository. You will need `node` and `npm` or `yarn` installed globally on your machine.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Install the dependencies
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```shell
+yarn
+```
 
-### `npm test`
+To run the project locally
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```shell
+yarn start
+```
 
-### `npm run build`
+To run eslint and prettier checks
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```shell
+yarn lint
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+To fix eslint and prettier issues silently
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```shell
+yarn lint:fix
+```
 
-### `npm run eject`
+<details>
+  <summary> Commands with npm</summary>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Install the dependencies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```shell
+npm install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+To run project locally
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```shell
+npm start
+```
 
-## Learn More
+To run eslint and prettier checks
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```shell
+npm run lint
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To fix eslint and prettier issues silently
+
+```shell
+npm run lint:fix
+```
+
+</details>
+
+## 📑 Overview
+
+-   `api/*` - API setup and api functions are here. I have used `axios` as a HTTP Client.
+-   `assets/*` - All static contents like icons and images are here.
+-   `components/*` - All components of the application go here. Separated by folder, which contains the component itself, specific style modules etc.
+-   `Contexts/*` - All context providers for the app are here.
+-   `hooks/*` - Custom hooks are here.
+-   `styles/*` - The global styles are here.
+-   `utils/*.ts` - Helper functions are here.
+
+## 👌 Improvements
+
+As the time was limited to develop the project, I couldn't make it with all the ideas in my mind. Things I consider to add to make it better -
+
+1. Testing: There should be some tests for some specific components.
+
+2. Global error handler: A global error handler can be added to catch unwanted errors. My choice would be `React ErrorBoundary Component` or [react-error-boundary](https://www.npmjs.com/package/react-error-boundary?activeTab=dependencies) package.
+
+## Author
+
+-   [@SadatJubayer](https://www.smjubayer.me)
