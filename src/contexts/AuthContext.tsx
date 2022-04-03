@@ -38,7 +38,7 @@ function authReducer(state: State, action: Action): State {
             };
         }
         case 'logout': {
-            return defaultState;
+            return { ...defaultState, isLoading: false };
         }
         default: {
             throw new Error(`Unhandled action type`);

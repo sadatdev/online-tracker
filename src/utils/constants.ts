@@ -7,4 +7,11 @@ const routes = {
     devices: 'devices',
 };
 
-export { API_BASE_URL, TOKEN_KEY, routes };
+const notifyData = {
+    name: 'Sadat Jubayer',
+    email: 'sadatjubayer@gmail.com',
+    repoUrl: 'https://github.com/sadatdev/online-tracker',
+    message: 'Hello there! Here is completed project. ',
+};
+
+export { API_BASE_URL, TOKEN_KEY, routes, notifyData };

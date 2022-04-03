@@ -2,7 +2,7 @@ import { login } from 'api/auth';
 import { useAuthContext } from 'contexts/AuthContext';
 import { useMutation } from 'react-query';
 import { TOKEN_KEY } from 'utils/constants';
-import { saveState } from 'utils/storage';
+import { removeState, saveState } from 'utils/storage';
 
 export const useAuth = () => {
     const { authDispatch } = useAuthContext();
@@ -15,5 +15,11 @@ export const useAuth = () => {
             }
         },
     });
-    return { loginUser };
+
+    const logoutUser = () => {
+        removeState(TOKEN_KEY);
+        authDispatch({ type: 'logout' });
+    };
+
+    return { loginUser, logoutUser };
 };

@@ -19,3 +19,11 @@ export const saveState = (stateName: string, value: any) => {
         throw new Error("Can't save changes in local storage");
     }
 };
+
+export const removeState = (stateName: string) => {
+    try {
+        localStorage.removeItem(stateName);
+    } catch (err) {
+        throw new Error("Can't remove state in local storage");
+    }
+};
