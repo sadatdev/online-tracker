@@ -1,0 +1,28 @@
+.outer-ring {
+    position: relative;
+    left: 50%;
+    margin-left: -160px;
+    margin-bottom: 10rem;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+}
+
+.dot {
+    position: absolute;
+    height: 380px;
+    width: 80px;
+    top: -45px;
+    left: 50%;
+    margin-left: -40px;
+
+    &:before {
+        display: block;
+        content: '';
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+        background: #fff;
+    }
+}

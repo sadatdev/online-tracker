@@ -4,6 +4,7 @@ const TOKEN_KEY = 'auth-token';
 
 const routes = {
     login: 'login',
+    devices: 'devices',
 };
 
 export { API_BASE_URL, TOKEN_KEY, routes };
