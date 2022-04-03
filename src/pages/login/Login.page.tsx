@@ -1,5 +1,6 @@
 import { EmailIIcon, PasswordIcon } from 'assets';
 import { Button, Input, Layout } from 'components';
+import { useAuth } from 'hooks/useAuth';
 import { useState } from 'react';
 import { strings } from 'utils/strings';
 
@@ -7,6 +8,7 @@ export const LoginPage = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
+    const { loginUser } = useAuth();
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -14,7 +16,15 @@ export const LoginPage = () => {
         if (!email || !password) {
             setError(strings.fill_all);
         }
+        loginUser.mutate(
+            { email, password },
+            {
+                // eslint-disable-next-line @typescript-eslint/no-explicit-any
+                onError: (err: any) => setError(err.response.data),
+            }
+        );
     };
+
     return (
         <Layout>
             <form
@@ -43,7 +53,11 @@ export const LoginPage = () => {
                 {error && (
                     <p className="p-2 text-xs text-red-800 bg-red-200 w-full rounded-sm">{error}</p>
                 )}
-                <Button text={strings.log_in.toUpperCase()} type="submit" />
+                <Button
+                    disabled={loginUser.isLoading}
+                    text={strings.log_in.toUpperCase()}
+                    type="submit"
+                />
             </form>
         </Layout>
     );
