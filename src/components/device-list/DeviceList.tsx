@@ -13,14 +13,15 @@ export const DeviceList = ({ devices }: IDeviceListProps) => {
 
     return (
         <div className="outer-ring">
-            {devices?.map((device) => (
-                <div
-                    key={device.id}
-                    className="dot"
-                    style={{ transform: `rotate(${device.id * divideInto}deg)` }}
-                ></div>
-            ))}
-
+            <div className="spinner-circle">
+                {devices?.map((device) => (
+                    <div
+                        key={device.id}
+                        className="dot"
+                        style={{ transform: `rotate(${device.id * divideInto}deg)` }}
+                    ></div>
+                ))}
+            </div>
             <h1 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center uppercase w-12 font-medium leading-tight">
                 <span className="text-7xl font-thin">{totalDevices}</span> <br />
                 <span>{strings.device_online}</span>
